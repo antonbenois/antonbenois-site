@@ -1,0 +1,430 @@
+:root {
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: #6d6d6d;
+  --line: #d9d9d9;
+  --max: 1500px;
+  --pad: clamp(18px, 2.5vw, 42px);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+img,
+video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.site {
+  width: min(100%, var(--max));
+  margin: 0 auto;
+  padding: 0 var(--pad) var(--pad);
+}
+
+.site-header {
+  display: flex;
+  align-items: baseline;
+  padding: 30px 0 56px;
+}
+
+.site-header--home {
+  justify-content: flex-start;
+}
+
+.site-header--inner {
+  justify-content: flex-start;
+}
+
+.site-nav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.site-nav a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.project-index--loose {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(14px, 2vw, 34px);
+  row-gap: clamp(40px, 8.5vw, 130px);
+  align-items: start;
+  padding: 20px 0 120px;
+}
+
+.project-card {
+  display: block;
+  min-width: 0;
+}
+
+.project-card figure {
+  margin: 0;
+}
+
+.project-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+}
+
+.project-card h2 {
+  margin: 9px 0 0;
+  font-size: 1rem;
+  line-height: 1.25;
+  font-weight: 400;
+}
+
+.project-card--lost {
+  grid-column: 1 / 9;
+}
+
+.project-card--ingen {
+  grid-column: 2 / 12;
+  margin-top: 0;
+}
+
+.project-card--archive {
+  grid-column: 7 / 13;
+  margin-top: clamp(10px, 5vw, 60px);
+}
+
+.project-card--eoh {
+  grid-column: 4 / 12;
+  margin-top: clamp(0px, 2vw, 0px);
+}
+
+.project-card--mutations {
+  grid-column: 1 / 7;
+}
+
+.project-card--living {
+  grid-column: 7 / 13;
+  margin-top: clamp(40px, 9vw, 120px);
+}
+
+.project-card--vacation {
+  grid-column: 2 / 10;
+  margin-top: 0;
+}
+
+.project-card--relatives {
+  grid-column: 6 / 13;
+  margin-top: clamp(0px, 5vw, 30px);
+}
+
+.page {
+  max-width: 900px;
+}
+
+.page h1,
+.project h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.6vw, 2.7rem);
+  line-height: 1.05;
+  font-weight: 400;
+}
+
+.page-copy,
+.project-meta,
+.project-copy {
+  max-width: 760px;
+}
+
+.page-copy {
+  margin-top: 42px;
+}
+
+.page-copy p,
+.project-copy p {
+  margin: 0 0 1em;
+}
+
+.project-header {
+  margin-bottom: 56px;
+}
+
+.project-meta {
+  margin-top: 14px;
+  color: var(--muted);
+}
+
+.project-copy {
+  margin: 0 0 56px;
+}
+
+.project-media {
+  display: grid;
+  gap: 24px;
+}
+
+.project-media figure {
+  margin: 0;
+}
+
+.project-media figcaption {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.placeholder {
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(135deg, #f0f0f0 25%, #fafafa 25%, #fafafa 50%, #f0f0f0 50%, #f0f0f0 75%, #fafafa 75%);
+  background-size: 28px 28px;
+  color: var(--muted);
+  text-align: center;
+  padding: 24px;
+}
+
+.cv-section {
+  margin-top: 42px;
+}
+
+.cv-section h2 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+}
+
+.cv-section p {
+  margin: 0 0 8px;
+}
+
+
+@media (max-width: 800px) {
+  .site-header {
+    padding: 22px 0 42px;
+  }
+
+  .project-index--loose {
+    display: block;
+    padding-top: 0;
+  }
+
+  .project-index--loose .project-card {
+    width: 100%;
+    margin: 0 0 52px;
+  }
+
+
+  .project-header,
+  .project-copy {
+    margin-bottom: 40px;
+  }
+}
+
+
+.video-embed {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0 0 56px;
+  background: #000;
+}
+
+.video-embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.project-credits {
+  max-width: 760px;
+  margin: 56px 0 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+
+/* Portrait documentation: vertical images should not inflate to full page width. */
+.project-media .portrait-single {
+  width: min(34%, 520px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-media .portrait-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2.5vw, 34px);
+  align-items: start;
+}
+
+.project-media .portrait-pair figure {
+  margin: 0;
+}
+
+.project-media .portrait-pair img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 760px) {
+  .project-media .portrait-single {
+    width: min(72%, 520px);
+  }
+
+  .project-media .portrait-pair {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .project-media .portrait-single {
+    width: 78%;
+  }
+
+  .project-media .portrait-pair {
+    grid-template-columns: 1fr;
+  }
+
+  .project-media .portrait-pair figure {
+    width: 78%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+.cv-page {
+  max-width: 1050px;
+}
+
+.cv-page > h1 {
+  margin-bottom: 48px;
+}
+
+.cv-page .cv-section {
+  margin-top: 0;
+  margin-bottom: 42px;
+}
+
+.cv-page .cv-section h2 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.cv-entry {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 16px;
+  margin: 0 0 5px;
+}
+
+.cv-year {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .cv-page > h1 {
+    margin-bottom: 36px;
+  }
+
+  .cv-page .cv-section {
+    margin-bottom: 34px;
+  }
+
+  .cv-entry {
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 10px;
+  }
+}
+
+
+@media (min-width: 1400px) {
+  .home-page .site {
+    --max: 1600px;
+  }
+}
+
+
+/* Contact: silent loop, now twice the previous desktop size. */
+.contact-loop {
+  width: 440px;
+  max-width: 90vw;
+  margin: clamp(56px, 7vw, 90px) clamp(22px, 6vw, 90px) 0 auto;
+}
+
+.contact-loop video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .contact-loop {
+    width: 320px;
+    max-width: 88vw;
+    margin-right: 0;
+  }
+}
+
+
+.project-credit {
+  color: var(--muted);
+  font-size: 0.875rem;
+  margin-top: 1.5em !important;
+}
+
+
+.film-frames {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.film-frames img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+
+.site-footer {
+  margin-top: 90px;
+  padding: 18px 0 6px;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
